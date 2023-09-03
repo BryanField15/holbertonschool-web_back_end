@@ -33,11 +33,16 @@ This repository is focused on understanding and practicing NoSQL databases, with
 
 ## Tasks
 
+---
+
 ### 0. List all databases
 **Filename**: `0-list_databases`
 
 **Description**:
   - Write a script that lists all databases in MongoDB.
+
+---
+
 ### 1. Create a database
 **Filename**: `1-use_or_create_database`
 
@@ -62,11 +67,15 @@ This repository is focused on understanding and practicing NoSQL databases, with
 **Description**:
   - Write a script that lists all documents in the collection `school`.
 
+---
+
 ### 4. All matches
 **Filename**: `4-match`
 
 **Description**:
   - Write a script that lists all documents with `name="Holberton school"` in the collection `school`.
+
+---
 
 ### 5. Count
 **Filename**: `5-count`
