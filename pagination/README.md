@@ -1,15 +1,13 @@
-## Learning Objectives
-
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+## What I've Learned
 
 ### How to paginate a dataset with simple page and page_size parameters
-Understand how to break a large dataset into smaller, manageable chunks using `page` and `page_size` parameters, and how to retrieve them incrementally.
+I've learned how to take a large dataset and split it into smaller, more manageable pieces using the `page` and `page_size` parameters. Now, I know how to efficiently fetch smaller sets of data while navigating through the entire dataset.
 
 ### How to paginate a dataset with hypermedia metadata
-Learn how to enrich your pagination functionality with hypermedia controls that guide the consumer through the paginated data more effectively.
+I've applied the concept of hypermedia pagination, where I not only return the data but also metadata like the current page, next page, and previous page. This helps anyone consuming the API to understand how to navigate through the paginated data effectively.
 
 ### How to paginate in a deletion-resilient manner
-Gain insights into handling edge cases in pagination, specifically how to maintain reliable pagination when items are deleted from the dataset.
+I've gained valuable insights into handling some of the challenges that come with pagination, specifically when rows get deleted from a dataset. Now, I know how to ensure that the pagination remains reliable and consistent, even when the data is changing.
 
 ---
 
