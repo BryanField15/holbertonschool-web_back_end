@@ -40,23 +40,20 @@ class Server:
         start_index, end_index = index_range(page, page_size)
         dataset = self.dataset()
         return dataset[start_index:end_index]
-    
+
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """Returns a dictionary of hypermedia pagination info"""
         data = self.get_page(page, page_size)
-        
         prev_page = page - 1
         if prev_page <= 0:
             prev_page = None
 
         total_items = len(self.dataset())
-        
         next_page = page + 1
         if page * page_size >= total_items:
             next_page = None
-
         total_pages = math.ceil(total_items / page_size)
-        
+
         hype_dict = {}
         hype_dict["page_size"] = page_size
         hype_dict["page"] = page
