@@ -49,7 +49,7 @@ class Server:
         next_index = index + page_size
         dataset = self.indexed_dataset()
         current_page_data = ([dataset[i] for i in range(index, next_index)
-                                  if i in dataset])
+                              if i in dataset])
 
         hype_dict = {
             "index": index,
