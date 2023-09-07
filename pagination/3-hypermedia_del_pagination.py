@@ -39,22 +39,22 @@ class Server:
             }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict[int, Any]:
-            """Returns deletion resistant hypermedia info"""
-            if index is None:
-                index = 0
-            assert (isinstance(index, int) and index > 0)
-            assert (isinstance(page_size, int) and page_size > 0)
+    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """Returns deletion resistant hypermedia info"""
+        if index is None:
+            index = 0
+        assert (isinstance(index, int) and index > 0)
+        assert (isinstance(page_size, int) and page_size > 0)
 
-            next_index = index + page_size
-            dataset = self.indexed_dataset()
-            current_page_data = ([dataset[i] for i in range(index, next_index)
+        next_index = index + page_size
+        dataset = self.indexed_dataset()
+        current_page_data = ([dataset[i] for i in range(index, next_index)
                                   if i in dataset])
 
-            hype_dict = {
-                "index": index,
-                "data": current_page_data,
-                "page_size": page_size,
-                "next_index": next_index,
-            }
-            return hype_dict
+        hype_dict = {
+            "index": index,
+            "data": current_page_data,
+            "page_size": page_size,
+            "next_index": next_index,
+        }
+        return hype_dict
