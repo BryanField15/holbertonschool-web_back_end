@@ -3,7 +3,7 @@
 
 import csv
 import math
-from typing import List, Dict
+from typing import List, Dict, Any
 
 
 def index_range(page, page_size):
@@ -41,25 +41,26 @@ class Server:
         dataset = self.dataset()
         return dataset[start_index:end_index]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[int, Any]:
         """Returns a dictionary of hypermedia pagination info"""
+        assert (isinstance(page, int) and page > 0)
+        assert (isinstance(page_size, int) and page_size > 0)
+
         data = self.get_page(page, page_size)
-        prev_page = page - 1
-        if prev_page <= 0:
-            prev_page = None
-
         total_items = len(self.dataset())
-        next_page = page + 1
-        if page * page_size >= total_items:
-            next_page = None
-        total_pages = math.ceil(total_items / page_size)
 
-        hype_dict = {}
-        hype_dict["page_size"] = page_size
-        hype_dict["page"] = page
-        hype_dict["data"] = data
-        hype_dict["next_page"] = next_page
-        hype_dict["prev_page"] = prev_page
-        hype_dict["total_pages"] = total_pages
+        prev_page = page - 1 if page > 1 else None
+        next_page = page + 1 if (page * page_size) < total_items else None
+        total_pages = (math.ceil(total_items / page_size)
+                       if page_size > 0 else 0)
+
+        hype_dict = {
+                "page_size": page_size,
+                "page": page,
+                "data": data,
+                "next_page": next_page,
+                "prev_page": prev_page,
+                "total_pages": total_pages,
+                }
 
         return hype_dict
