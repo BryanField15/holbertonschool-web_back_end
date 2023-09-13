@@ -37,3 +37,26 @@ export function taskNext() {
 
   return combination;
 }
+
+---
+
+### 1. Block Scope
+**Filename**: `1-block-scoped.js`
+
+**Description**:
+  - Given knowledge on `var` and hoisting, modify the variables inside the function `taskBlock` to ensure the variables aren't overwritten inside the conditional block.
+
+Original Code:
+
+```javascript
+export default function taskBlock(trueOrFalse) {
+  var task = false;
+  var task2 = true;
+
+  if (trueOrFalse) {
+    var task = true;
+    var task2 = false;
+  }
+
+  return [task, task2];
+}
