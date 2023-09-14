@@ -60,3 +60,24 @@ export default function taskBlock(trueOrFalse) {
 
   return [task, task2];
 }
+
+---
+
+### 2. Arrow Functions
+**Filename**: `2-arrow.js`
+
+**Description**:
+  - Rewrite the provided standard function to leverage ES6's arrow function syntax. The function `add` should be converted to an anonymous arrow function.
+
+Original Code:
+
+```javascript
+export default function getNeighborhoodsList() {
+  this.sanFranciscoNeighborhoods = ['SOMA', 'Union Square'];
+
+  const self = this;
+  this.addNeighborhood = function add(newNeighborhood) {
+    self.sanFranciscoNeighborhoods.push(newNeighborhood);
+    return self.sanFranciscoNeighborhoods;
+  };
+}
