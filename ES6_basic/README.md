@@ -81,3 +81,27 @@ export default function getNeighborhoodsList() {
     return self.sanFranciscoNeighborhoods;
   };
 }
+
+---
+
+### 3. Parameter Defaults
+**Filename**: `3-default-parameter.js`
+
+**Description**:
+  - Condense the internals of the provided function to just 1 line without renaming any function or variable.
+  - The hint to solve this task is to define default parameter values for the function parameters.
+
+Original Code:
+
+```javascript
+export default function getSumOfHoods(initialNumber, expansion1989, expansion2019) {
+  if (expansion1989 === undefined) {
+    expansion1989 = 89;
+  }
+
+  if (expansion2019 === undefined) {
+    expansion2019 = 19;
+  }
+  return initialNumber + expansion1989 + expansion2019;
+}
+
