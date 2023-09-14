@@ -105,3 +105,18 @@ export default function getSumOfHoods(initialNumber, expansion1989, expansion201
   return initialNumber + expansion1989 + expansion2019;
 }
 
+---
+
+### 4. Rest parameter syntax for functions
+**Filename**: `4-rest-parameter.js`
+
+**Description**:
+  - Modify the function to return the number of arguments passed to it using the rest parameter syntax.
+
+Modified Code:
+
+```javascript
+export default function returnHowManyArguments(...args) {
+  return args.length;
+}
+
