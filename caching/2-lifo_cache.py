@@ -17,7 +17,7 @@ class LIFOCache(BaseCaching):
         """Assigns the item value given the key"""
         if key is None or item is None:
             return
-        
+
         if key in self.cache_data:
             self.keys.remove(key)
 
